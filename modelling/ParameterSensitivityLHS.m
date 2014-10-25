@@ -117,6 +117,12 @@ function [ SensitivityCoeff, Errors, Optimal ] = ...
         savefig(sprintf('Plots/Sensitivity/System_Sensitivity_Difference_Parameter_%d',i));
         close(gcf)
         
+        AcceptableY = f1;
+        UnacceptableY = f2;
+        AcceptableX = x1;
+        UnacceptableX = x2;
+        save(sprintf('Plots/Sensitivity/System_Sensitivity_Parameter_%d.mat', i),...
+             'AcceptableX', 'AcceptableY', 'UnacceptableX', 'UnacceptableY');
     end
     
     figure('Position', [0 0 1024 1024]);
